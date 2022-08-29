@@ -9,22 +9,24 @@ import Button from '../../components/Button';
 import Logo from '../../assets/img/logo.png';
 
 const initialValues = {
+    name: " ",
     email: "",
     password: "",
 };
 
-const SinginSchema = Yup.object().shape({
-    email: Yup.string().email("Email invalido").required("Obrigatório"),
+const SingUpSchema = Yup.object().shape({
+    name:Yup.string(),
+    email: Yup.string().required("Obrigatório"),
     password: Yup.string().min(8, "Senha invalida").required("Obrigatório"),
 });
 
-const Login = ({ navigation }) => {
+const Register = ({ navigation }) => {
     return (
         <Container>
 
             <Formik
                 initialValues={initialValues}
-                validationSchema={SinginSchema}
+                validationSchema={SingUpSchema}
                 onSubmit={values => console.log(values)}
             >
                 {({ handleChange, handleBlur, handleSubmit, values, touched, errors, }) => (
@@ -33,15 +35,14 @@ const Login = ({ navigation }) => {
                         <View style={{ alignItems: 'center', marginBottom: 42 }}>
                             <Image source={Logo} />
                         </View>
+                        <Input placeholder="Nome" onChange={handleChange("name")} onBlur={handleBlur("name")} value={values.name} />
                         <Input placeholder="Email" onChange={handleChange("email")} onBlur={handleBlur("email")} value={values.email}
                             error={errors.email && touched.email ? errors.email : undefined} />
-                        <Input placeholder="Senha" onChange={handleChange("password")} onBlur={handleBlur("password")} value={values.password}
-                            error={errors.password && touched.password ? errors.password : undefined} password />
+                        <Input placeholder="Senha" onChange={handleChange("password")} onBlur={handleBlur("password")} value={values.password} 
+                        error={errors.password && touched.password ? errors.password : undefined} password />
                         <View style={{ marginTop: 12 }}>
-                            <Button title="Login" onPress={() => handleSubmit()} />
-                            <Button title="Quero me cadastrar" link 
-                                onPress={() => navigation.navigate('Register')}
-                            />
+                            <Button title="Registro" onPress={() => handleSubmit()} />
+                            <Button title="Tem conta? Faça login" link onPress={() => navigation.navigate('Login')}/>
                         </View>
                     </View>
                 )}
@@ -50,4 +51,4 @@ const Login = ({ navigation }) => {
     );
 }
 
-export default Login;
+export default Register;
