@@ -8,11 +8,18 @@ services:
       - "8081:8080"
     depends_on:
       - db
+      - cache
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/sweet-candy-db
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_REDIS_DATABASE=0
+      - SPRING_REDIS_HOST=cache
+      - SRPING_REDIS_PORT=6379
+      - SPRING_REDIS_PASSWORD=mypass
+      - SPRING_REDIS_TIMEOUT=60000
+
   db:
     container_name: database
     image: 'sweet-candy-api/database:1'
@@ -21,6 +28,13 @@ services:
       - "5433:5432"
     volumes:
       - "dbdata:/var/lib/postgresql/data"
+  cache:
+    container_name: cache
+    image: redis
+    command: redis-server --save 20 1 --loglevel warning --requirepass mypass
+    restart: always
+    ports:
+      - "6380:6379"
 volumes:
   dbdata:
     driver: local

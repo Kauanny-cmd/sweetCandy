@@ -22,7 +22,9 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
     private static final String[] AUTH_WHITELIST = {
             "/login",
             "/empresas",
-            "/itens"
+            "/itens",
+            "/carrinhos",
+            "/carrinhos/*"
     };
 
     public JWTConfiguracao(DetalheClienteServiceImpl clienteService, PasswordEncoder passwordEncoder) {

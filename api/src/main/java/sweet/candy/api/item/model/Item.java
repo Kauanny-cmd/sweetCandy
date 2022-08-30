@@ -5,12 +5,13 @@ import lombok.Data;
 import sweet.candy.api.pedido.model.ItemPedido;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Data
 @SequenceGenerator(name ="seq_item_id", allocationSize = 1)
-public class Item {
+public class Item implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_item_id")

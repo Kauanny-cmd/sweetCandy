@@ -5,6 +5,7 @@ import lombok.Data;
 import sweet.candy.api.endereco.model.Endereco;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @SequenceGenerator(name ="seq_pedido_id", allocationSize = 1)
-public class Pedido {
+public class Pedido implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator ="seq_pedido_id")
     private long id;

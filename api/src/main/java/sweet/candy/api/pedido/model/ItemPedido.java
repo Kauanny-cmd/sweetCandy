@@ -5,10 +5,11 @@ import lombok.Data;
 import sweet.candy.api.item.model.Item;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
-public class ItemPedido {
+public class ItemPedido implements Serializable {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @EmbeddedId
     private ItemPedidoKey id;
