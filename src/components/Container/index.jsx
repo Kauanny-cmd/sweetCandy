@@ -5,7 +5,7 @@ const Container = ({children}) => {
         <SafeAreaView
             style={{
                 flex: 1,
-                backgroundColor: '#FFF',
+                backgroundColor: '#F8F9FA',
                 paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
             }}
         >
