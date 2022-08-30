@@ -1,4 +1,4 @@
-import { View, Image } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from "yup";
 
@@ -20,6 +20,7 @@ const SinginSchema = Yup.object().shape({
 
 const Login = ({ navigation }) => {
     return (
+
         <Container>
 
             <Formik
@@ -37,12 +38,17 @@ const Login = ({ navigation }) => {
                             error={errors.email && touched.email ? errors.email : undefined} />
                         <Input placeholder="Senha" onChange={handleChange("password")} onBlur={handleBlur("password")} value={values.password}
                             error={errors.password && touched.password ? errors.password : undefined} password />
-                        <View style={{ marginTop: 12 }}>
-                            <Button title="Login" onPress={() => handleSubmit()} />
-                            <Button title="Quero me cadastrar" link 
-                                onPress={() => navigation.navigate('Register')}
-                            />
-                        </View>
+                        <TouchableOpacity style={{ marginTop: 12 }} onPress={() => handleSubmit()} >
+                            <Button title="Login" onPress={() => {
+                                navigation.reset({
+                                    index: 0,
+                                    routes: [{ name: 'Home' }],
+                                })
+                            }} />
+                        </TouchableOpacity>
+                        <Button title="Quero me cadastrar" link
+                            onPress={() => navigation.navigate('Register')}
+                        />
                     </View>
                 )}
             </Formik>
