@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 8,
         borderTopRightRadius: 8,
         borderBottomRightRadius: 8,
+        marginTop: 20,
         
     },top: {
         flex: 1,
@@ -16,7 +17,6 @@ const styles = StyleSheet.create({
         padding: 14,
         borderTopRightRadius: 8,
         borderTopLeftRadius: 8,
-       
     },
     bottom: {
         flex: 1,
@@ -26,7 +26,13 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 8,
         flexDirection: "column",
         justifyContent: "space-between"
-    }
+    }, Img:{
+        width: 130, 
+        height: 100,
+        position:"absolute",
+        top: 7,
+        left:22,
+    },
     
 });
 

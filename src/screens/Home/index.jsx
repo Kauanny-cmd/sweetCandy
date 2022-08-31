@@ -57,27 +57,32 @@ const Home = ({ navigation }) => {
                     </TouchableOpacity>
 
                     <View style={style.produtos}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Product1')}>
                             <Cards
                                 type='Fatia'
                                 name="Creme de Coco"
                                 price='R$ 6,00'
-                                img={require('../../assets/img/donut.png')}
+                                img={require('../../assets/img/bolo-creme.png')}
                             />
                            
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Product2')}>
                             <Cards
                                 type='Bolo'
                                 name="Trufas Negras"
                                 price='R$ 59,99'
                                 img={require('../../assets/img/bolo-choco.png')}
+                                
+                                onSubmit={(
+                                    type,
+                                    name
+                                ) => navigation.Product}
                             />
                            
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+                        <TouchableOpacity >
                             <Cards
                                 type='Bolo'
                                 name="Pote Doce"
@@ -87,7 +92,7 @@ const Home = ({ navigation }) => {
                            
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+                        <TouchableOpacity >
                             <Cards
                                 type='Doce'
                                 name="Bem Casado"
@@ -97,7 +102,7 @@ const Home = ({ navigation }) => {
                            
                         </TouchableOpacity>
                         
-                        <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+                        <TouchableOpacity>
                             <Cards
                                 type='Doce'
                                 name="Brigadeiro"
@@ -107,7 +112,7 @@ const Home = ({ navigation }) => {
                            
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+                        <TouchableOpacity >
                             <Cards
                                 type='Doce'
                                 name="Quindim"
