@@ -11,4 +11,4 @@ Após clonar o repositório e entrar na pasta, é necessário baixar o **Expo** 
 Em seguida, é só dar um **`yarn`**, para que todas as dependências sejam instaladas.
 Por fim, basta iniciar a aplicação com um **`npx expo start`**, com isso, aparecerá um QRCode, no qual você fará o scanner com o aplicativo da Expo no seu celular.
 
-<a src="https://www.figma.com/file/7JU2Xu9qLlIvyDbAxJ9RVB/Untitled?node-id=0%3A1&fuid=949035991487211637"> Figma </a>
+[Figma](https://www.figma.com/file/7JU2Xu9qLlIvyDbAxJ9RVB/Untitled?node-id=0%3A1&fuid=949035991487211637)
